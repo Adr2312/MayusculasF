@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A284BAF26263CB600687A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BAE26263CB600687A37 /* AppDelegate.swift */; };
+		3A284BB126263CB600687A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BB026263CB600687A37 /* SceneDelegate.swift */; };
+		3A284BB326263CB600687A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BB226263CB600687A37 /* ViewController.swift */; };
+		3A284BB626263CB600687A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A284BB426263CB600687A37 /* Main.storyboard */; };
+		3A284BB826263CB700687A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A284BB726263CB700687A37 /* Assets.xcassets */; };
+		3A284BBB26263CB700687A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A284BB926263CB700687A37 /* LaunchScreen.storyboard */; };
+		3A52AAB4265BF997004DE0B3 /* APViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AAB3265BF997004DE0B3 /* APViewController.swift */; };
+		3A52AAB7265BF9A8004DE0B3 /* APBanco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AAB6265BF9A8004DE0B3 /* APBanco.swift */; };
+		3A52AABA265BF9B8004DE0B3 /* APOracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A52AAB9265BF9B8004DE0B3 /* APOracion.swift */; };
+		3A78D191262BABB800909BAE /* AgregarNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78D190262BABB800909BAE /* AgregarNotaViewController.swift */; };
+		3A78D194262BABC500909BAE /* VerNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78D193262BABC500909BAE /* VerNotaViewController.swift */; };
+		3A78D198262BB58B00909BAE /* VerReglaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78D197262BB58B00909BAE /* VerReglaViewController.swift */; };
+		3A7C3521262B3AC5006C0BC1 /* JuegosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3520262B3AC5006C0BC1 /* JuegosTableViewController.swift */; };
+		3A7C3529262B411C006C0BC1 /* Juegos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3528262B411C006C0BC1 /* Juegos.swift */; };
+		3A7C352C262B487C006C0BC1 /* Fuentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C352B262B487C006C0BC1 /* Fuentes.swift */; };
+		3A7C352F262B4907006C0BC1 /* FuentesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */; };
+		3A7C3532262B4CAA006C0BC1 /* FuentesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */; };
+		3A7C3535262B9070006C0BC1 /* ReglasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */; };
+		3A7C3538262B908A006C0BC1 /* Reglas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3537262B908A006C0BC1 /* Reglas.swift */; };
+		3A7C353B262B951A006C0BC1 /* Notas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C353A262B951A006C0BC1 /* Notas.swift */; };
+		3A7C353E262B952E006C0BC1 /* NotasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C353D262B952E006C0BC1 /* NotasTableViewController.swift */; };
+		3AAFBD74264B377600D5E4F0 /* COOracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFBD73264B377600D5E4F0 /* COOracion.swift */; };
+		3AAFBD77264B37F100D5E4F0 /* COBanco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFBD76264B37F100D5E4F0 /* COBanco.swift */; };
+		3AAFBD7B264B39ED00D5E4F0 /* COViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFBD7A264B39ED00D5E4F0 /* COViewController.swift */; };
+		3ACD0C1D2642069B00108CE6 /* RCJuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD0C1C2642069B00108CE6 /* RCJuegoViewController.swift */; };
+		3ACD0C202642076D00108CE6 /* RCPregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD0C1F2642076D00108CE6 /* RCPregunta.swift */; };
+		3ACD0C232642080000108CE6 /* RCBanco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACD0C222642080000108CE6 /* RCBanco.swift */; };
+		3AD299A7264AC8D700A67F77 /* PuntajesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD299A6264AC8D700A67F77 /* PuntajesViewController.swift */; };
+		3AD299AB264AD0CA00A67F77 /* JuegosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD299AA264AD0CA00A67F77 /* JuegosViewController.swift */; };
+		3AFF8AD7265C0E770062906A /* webViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF8AD6265C0E770062906A /* webViewController.swift */; };
+		BCD88E76262C01CE00E2FF46 /* VFPregunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD88E75262C01CE00E2FF46 /* VFPregunta.swift */; };
+		BCD88E79262C032500E2FF46 /* VFBanco.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD88E78262C032500E2FF46 /* VFBanco.swift */; };
+		BCD88E7C262C152400E2FF46 /* VFJuegoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD88E7B262C152400E2FF46 /* VFJuegoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A284BAB26263CB600687A37 /* Mayusculas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mayusculas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A284BAE26263CB600687A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A284BB026263CB600687A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A284BB226263CB600687A37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A284BB526263CB600687A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A284BB726263CB700687A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A284BBA26263CB700687A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A284BBC26263CB700687A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A52AAB3265BF997004DE0B3 /* APViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APViewController.swift; sourceTree = "<group>"; };
+		3A52AAB6265BF9A8004DE0B3 /* APBanco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APBanco.swift; sourceTree = "<group>"; };
+		3A52AAB9265BF9B8004DE0B3 /* APOracion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOracion.swift; sourceTree = "<group>"; };
+		3A78D190262BABB800909BAE /* AgregarNotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarNotaViewController.swift; sourceTree = "<group>"; };
+		3A78D193262BABC500909BAE /* VerNotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerNotaViewController.swift; sourceTree = "<group>"; };
+		3A78D197262BB58B00909BAE /* VerReglaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerReglaViewController.swift; sourceTree = "<group>"; };
+		3A7C3520262B3AC5006C0BC1 /* JuegosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegosTableViewController.swift; sourceTree = "<group>"; };
+		3A7C3528262B411C006C0BC1 /* Juegos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juegos.swift; sourceTree = "<group>"; };
+		3A7C352B262B487C006C0BC1 /* Fuentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fuentes.swift; sourceTree = "<group>"; };
+		3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuentesTableViewController.swift; sourceTree = "<group>"; };
+		3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuentesTableViewCell.swift; sourceTree = "<group>"; };
+		3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReglasTableViewController.swift; sourceTree = "<group>"; };
+		3A7C3537262B908A006C0BC1 /* Reglas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reglas.swift; sourceTree = "<group>"; };
+		3A7C353A262B951A006C0BC1 /* Notas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notas.swift; sourceTree = "<group>"; };
+		3A7C353D262B952E006C0BC1 /* NotasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotasTableViewController.swift; sourceTree = "<group>"; };
+		3AAFBD73264B377600D5E4F0 /* COOracion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COOracion.swift; sourceTree = "<group>"; };
+		3AAFBD76264B37F100D5E4F0 /* COBanco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBanco.swift; sourceTree = "<group>"; };
+		3AAFBD7A264B39ED00D5E4F0 /* COViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COViewController.swift; sourceTree = "<group>"; };
+		3ACD0C1C2642069B00108CE6 /* RCJuegoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCJuegoViewController.swift; sourceTree = "<group>"; };
+		3ACD0C1F2642076D00108CE6 /* RCPregunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCPregunta.swift; sourceTree = "<group>"; };
+		3ACD0C222642080000108CE6 /* RCBanco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCBanco.swift; sourceTree = "<group>"; };
+		3AD299A6264AC8D700A67F77 /* PuntajesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuntajesViewController.swift; sourceTree = "<group>"; };
+		3AD299AA264AD0CA00A67F77 /* JuegosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegosViewController.swift; sourceTree = "<group>"; };
+		3AFF8AD6265C0E770062906A /* webViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewController.swift; sourceTree = "<group>"; };
+		BCD88E75262C01CE00E2FF46 /* VFPregunta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFPregunta.swift; sourceTree = "<group>"; };
+		BCD88E78262C032500E2FF46 /* VFBanco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFBanco.swift; sourceTree = "<group>"; };
+		BCD88E7B262C152400E2FF46 /* VFJuegoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFJuegoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A284BA826263CB600687A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A284BA226263CB600687A37 = {
+			isa = PBXGroup;
+			children = (
+				3AFF8AD6265C0E770062906A /* webViewController.swift */,
+				3A284BAD26263CB600687A37 /* Maysuculas */,
+				3A284BAC26263CB600687A37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A284BAC26263CB600687A37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A284BAB26263CB600687A37 /* Mayusculas.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A284BAD26263CB600687A37 /* Maysuculas */ = {
+			isa = PBXGroup;
+			children = (
+				3A284BAE26263CB600687A37 /* AppDelegate.swift */,
+				BCD88E75262C01CE00E2FF46 /* VFPregunta.swift */,
+				BCD88E78262C032500E2FF46 /* VFBanco.swift */,
+				BCD88E7B262C152400E2FF46 /* VFJuegoViewController.swift */,
+				3A284BB026263CB600687A37 /* SceneDelegate.swift */,
+				3A284BB226263CB600687A37 /* ViewController.swift */,
+				3A284BB426263CB600687A37 /* Main.storyboard */,
+				3A52AAB3265BF997004DE0B3 /* APViewController.swift */,
+				3A52AAB6265BF9A8004DE0B3 /* APBanco.swift */,
+				3A52AAB9265BF9B8004DE0B3 /* APOracion.swift */,
+				3AAFBD7A264B39ED00D5E4F0 /* COViewController.swift */,
+				3AAFBD73264B377600D5E4F0 /* COOracion.swift */,
+				3AAFBD76264B37F100D5E4F0 /* COBanco.swift */,
+				3AD299AA264AD0CA00A67F77 /* JuegosViewController.swift */,
+				3AD299A6264AC8D700A67F77 /* PuntajesViewController.swift */,
+				3ACD0C1F2642076D00108CE6 /* RCPregunta.swift */,
+				3ACD0C222642080000108CE6 /* RCBanco.swift */,
+				3ACD0C1C2642069B00108CE6 /* RCJuegoViewController.swift */,
+				3A78D197262BB58B00909BAE /* VerReglaViewController.swift */,
+				3A78D190262BABB800909BAE /* AgregarNotaViewController.swift */,
+				3A78D193262BABC500909BAE /* VerNotaViewController.swift */,
+				3A7C353D262B952E006C0BC1 /* NotasTableViewController.swift */,
+				3A7C353A262B951A006C0BC1 /* Notas.swift */,
+				3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */,
+				3A7C3537262B908A006C0BC1 /* Reglas.swift */,
+				3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */,
+				3A7C352B262B487C006C0BC1 /* Fuentes.swift */,
+				3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */,
+				3A7C3528262B411C006C0BC1 /* Juegos.swift */,
+				3A7C3520262B3AC5006C0BC1 /* JuegosTableViewController.swift */,
+				3A284BB726263CB700687A37 /* Assets.xcassets */,
+				3A284BB926263CB700687A37 /* LaunchScreen.storyboard */,
+				3A284BBC26263CB700687A37 /* Info.plist */,
+			);
+			path = Maysuculas;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A284BAA26263CB600687A37 /* Mayusculas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A284BBF26263CB700687A37 /* Build configuration list for PBXNativeTarget "Mayusculas" */;
+			buildPhases = (
+				3A284BA726263CB600687A37 /* Sources */,
+				3A284BA826263CB600687A37 /* Frameworks */,
+				3A284BA926263CB600687A37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mayusculas;
+			productName = Maysuculas;
+			productReference = 3A284BAB26263CB600687A37 /* Mayusculas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A284BA326263CB600687A37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					3A284BAA26263CB600687A37 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 3A284BA626263CB600687A37 /* Build configuration list for PBXProject "Mayusculas" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A284BA226263CB600687A37;
+			productRefGroup = 3A284BAC26263CB600687A37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A284BAA26263CB600687A37 /* Mayusculas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A284BA926263CB600687A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A284BBB26263CB700687A37 /* LaunchScreen.storyboard in Resources */,
+				3A284BB826263CB700687A37 /* Assets.xcassets in Resources */,
+				3A284BB626263CB600687A37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A284BA726263CB600687A37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCD88E79262C032500E2FF46 /* VFBanco.swift in Sources */,
+				3A78D198262BB58B00909BAE /* VerReglaViewController.swift in Sources */,
+				3A284BB326263CB600687A37 /* ViewController.swift in Sources */,
+				3AAFBD74264B377600D5E4F0 /* COOracion.swift in Sources */,
+				3A7C353E262B952E006C0BC1 /* NotasTableViewController.swift in Sources */,
+				3AFF8AD7265C0E770062906A /* webViewController.swift in Sources */,
+				3ACD0C232642080000108CE6 /* RCBanco.swift in Sources */,
+				3A7C3535262B9070006C0BC1 /* ReglasTableViewController.swift in Sources */,
+				3AD299A7264AC8D700A67F77 /* PuntajesViewController.swift in Sources */,
+				3A7C352F262B4907006C0BC1 /* FuentesTableViewController.swift in Sources */,
+				3A7C3532262B4CAA006C0BC1 /* FuentesTableViewCell.swift in Sources */,
+				3A78D191262BABB800909BAE /* AgregarNotaViewController.swift in Sources */,
+				3A52AAB4265BF997004DE0B3 /* APViewController.swift in Sources */,
+				3A52AAB7265BF9A8004DE0B3 /* APBanco.swift in Sources */,
+				3A284BAF26263CB600687A37 /* AppDelegate.swift in Sources */,
+				BCD88E7C262C152400E2FF46 /* VFJuegoViewController.swift in Sources */,
+				3ACD0C202642076D00108CE6 /* RCPregunta.swift in Sources */,
+				3A7C3521262B3AC5006C0BC1 /* JuegosTableViewController.swift in Sources */,
+				3A284BB126263CB600687A37 /* SceneDelegate.swift in Sources */,
+				3AAFBD7B264B39ED00D5E4F0 /* COViewController.swift in Sources */,
+				3ACD0C1D2642069B00108CE6 /* RCJuegoViewController.swift in Sources */,
+				3A7C353B262B951A006C0BC1 /* Notas.swift in Sources */,
+				3A7C352C262B487C006C0BC1 /* Fuentes.swift in Sources */,
+				3A52AABA265BF9B8004DE0B3 /* APOracion.swift in Sources */,
+				3A7C3529262B411C006C0BC1 /* Juegos.swift in Sources */,
+				BCD88E76262C01CE00E2FF46 /* VFPregunta.swift in Sources */,
+				3AD299AB264AD0CA00A67F77 /* JuegosViewController.swift in Sources */,
+				3A78D194262BABC500909BAE /* VerNotaViewController.swift in Sources */,
+				3A7C3538262B908A006C0BC1 /* Reglas.swift in Sources */,
+				3AAFBD77264B37F100D5E4F0 /* COBanco.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3A284BB426263CB600687A37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A284BB526263CB600687A37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A284BB926263CB700687A37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A284BBA26263CB700687A37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A284BBD26263CB700687A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A284BBE26263CB700687A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A284BC026263CB700687A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Maysuculas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AdrianVilla.Maysuculas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A284BC126263CB700687A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Maysuculas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AdrianVilla.Maysuculas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A284BA626263CB600687A37 /* Build configuration list for PBXProject "Mayusculas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A284BBD26263CB700687A37 /* Debug */,
+				3A284BBE26263CB700687A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A284BBF26263CB700687A37 /* Build configuration list for PBXNativeTarget "Mayusculas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A284BC026263CB700687A37 /* Debug */,
+				3A284BC126263CB700687A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A284BA326263CB600687A37 /* Project object */;
+}
