@@ -15,6 +15,7 @@ class APViewController: UIViewController {
     @IBOutlet weak var B4: UIButton!
     @IBOutlet weak var lPuntos: UILabel!
     @IBOutlet weak var lOracion: UILabel!
+    @IBOutlet weak var bButon: UIButton!
     
     var lista = APBanco()
     var cont : Int = 0
@@ -32,9 +33,8 @@ class APViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        color = UIColor(red: 204, green: 204, blue: 204, alpha: 1)
-        
-        
+        color = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        bButon.layer.cornerRadius = 10
         B1.layer.cornerRadius = 10
         B2.layer.cornerRadius = 10
         B3.layer.cornerRadius = 10
@@ -80,6 +80,10 @@ class APViewController: UIViewController {
     
     func update(){
        
+        B1.backgroundColor = color
+        B2.backgroundColor = color
+        B3.backgroundColor = color
+        B4.backgroundColor = color
         
         index = orden.first!
         listOp = llenar()

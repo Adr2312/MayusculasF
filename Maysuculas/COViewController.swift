@@ -13,6 +13,8 @@ class COViewController: UIViewController {
     @IBOutlet weak var lPuntos: UILabel!
     @IBOutlet weak var lOracion: UILabel!
     @IBOutlet weak var tfOracion: UITextView!
+    @IBOutlet weak var bButon: UIButton!
+    
     let lista = COBanco()
     var indice = 0
     var puntos = 0
@@ -22,6 +24,7 @@ class COViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        bButon.layer.cornerRadius = 10
         let orden1 = randomNumber()
         orden = orden1
         update()
