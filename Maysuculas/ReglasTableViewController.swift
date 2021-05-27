@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ReglasTableViewController: UITableViewController {
-
+class ReglasTableViewController: UITableViewController, UISearchBarDelegate{
+    var filteredData : [Reglas]!
     var listaReglas = [
         Reglas(ejemplo: "Se escribe mayúscula después de un punto.", regla: "El hombre se acercó a la puerta y tocó. Nadie contestó. Volvió a intentarlo y al poco tiempo salió una mujer. Él la miró."),
         Reglas(ejemplo: "Se escribe mayúscula al inicio de un párrafo u oración.", regla: "La biología es la ciencia que estudia a los seres vivos."),
@@ -39,7 +39,7 @@ class ReglasTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        filteredData = listaReglas
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,15 +56,15 @@ class ReglasTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listaReglas.count
+        return filteredData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "regla", for: indexPath)
 
-        cell.textLabel?.text = listaReglas[indexPath.row].ejemplo
-        cell.detailTextLabel?.text = listaReglas[indexPath.row].regla
+        cell.textLabel?.text = filteredData[indexPath.row].ejemplo
+        cell.detailTextLabel?.text = filteredData[indexPath.row].regla
 
         return cell
     }
@@ -76,6 +76,23 @@ class ReglasTableViewController: UITableViewController {
             vistaRegla.unaRegla = listaReglas[indice!.row]
         }
         
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = []
+        
+        if searchText == ""{
+            filteredData = listaReglas
+        }
+        
+        for word in listaReglas{
+            
+            if word.ejemplo.uppercased().contains(searchText.uppercased()) || word.regla.uppercased().contains(searchText.uppercased()){
+                filteredData.append(word)
+            }
+        }
+        
+        tableView.reloadData()
     }
     
     /*

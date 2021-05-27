@@ -7,18 +7,21 @@
 
 import UIKit
 
-class NotasTableViewController: UITableViewController {
+class NotasTableViewController: UITableViewController, UISearchBarDelegate {
     var nNota = Notas(nombre: "", nota: "")
+    var filteredData : [Notas]!
     var listaNotas = [
-        Notas(nombre: "Nota 1", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
-        Notas(nombre: "Nota 2", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
-        Notas(nombre: "Nota 3", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
-        Notas(nombre: "Nota 4", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated")
+        Notas(nombre: "Titulos", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
+        Notas(nombre: "Meses", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
+        Notas(nombre: "Citas", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
+        Notas(nombre: "Nombres", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated")
     ]
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        filteredData = listaNotas
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,21 +38,22 @@ class NotasTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listaNotas.count
+        return filteredData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nota", for: indexPath)
 
-        cell.textLabel?.text = listaNotas[indexPath.row].nombre
-        cell.detailTextLabel?.text = listaNotas[indexPath.row].nota
+        cell.textLabel?.text = filteredData[indexPath.row].nombre
+        cell.detailTextLabel?.text = filteredData[indexPath.row].nota
 
         return cell
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         listaNotas.append(nNota)
+        filteredData.append(nNota)
         tableView.reloadData()
     }
 
@@ -81,6 +85,22 @@ class NotasTableViewController: UITableViewController {
         }    
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = []
+        
+        if searchText == ""{
+            filteredData = listaNotas
+        }
+        
+        for word in listaNotas{
+            
+            if word.nota.uppercased().contains(searchText.uppercased()) || word.nombre.uppercased().contains(searchText.uppercased()){
+                filteredData.append(word)
+            }
+        }
+        
+        tableView.reloadData()
+    }
 
     /*
     // Override to support rearranging the table view.
