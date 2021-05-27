@@ -30,10 +30,12 @@ class APViewController: UIViewController {
     var SB3 : Bool = false
     var SB4 : Bool = false
     var color :UIColor!
+    var color2 :UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         color = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1)
+        color2 = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
         bButon.layer.cornerRadius = 10
         B1.layer.cornerRadius = 10
         B2.layer.cornerRadius = 10
@@ -111,10 +113,28 @@ class APViewController: UIViewController {
     
     @IBAction func BB1(_ sender: Any) {
         if !selec {
-        B1.backgroundColor = .green
+        B1.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B1.currentTitle! + lista.lista[index].OracionB
             selec = true
             SB1 = true
+        }else if SB2 {
+            SB2 = false
+            B2.backgroundColor = color
+            SB1 = true
+            B1.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B1.currentTitle! + lista.lista[index].OracionB
+        }else if SB3 {
+            SB3 = false
+            B3.backgroundColor = color
+            SB1 = true
+            B1.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B1.currentTitle! + lista.lista[index].OracionB
+        }else if SB4 {
+            SB4 = false
+            B4.backgroundColor = color
+            SB1 = true
+            B1.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B1.currentTitle! + lista.lista[index].OracionB
         }else{
             if SB1 {
                 SB1 = false
@@ -127,10 +147,28 @@ class APViewController: UIViewController {
     
     @IBAction func BB2(_ sender: Any) {
         if !selec {
-        B2.backgroundColor = .green
+        B2.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B2.currentTitle! + lista.lista[index].OracionB
             selec = true
             SB2 = true
+        }else if SB1 {
+            SB1 = false
+            B1.backgroundColor = color
+            SB2 = true
+            B2.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B2.currentTitle! + lista.lista[index].OracionB
+        }else if SB3 {
+            SB3 = false
+            B3.backgroundColor = color
+            SB2 = true
+            B2.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B2.currentTitle! + lista.lista[index].OracionB
+        }else if SB4 {
+            SB4 = false
+            B4.backgroundColor = color
+            SB2 = true
+            B2.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B2.currentTitle! + lista.lista[index].OracionB
         }else{
             if SB2 {
                 SB2 = false
@@ -142,10 +180,28 @@ class APViewController: UIViewController {
     }
     @IBAction func BB3(_ sender: Any) {
         if !selec {
-        B3.backgroundColor = .green
+        B3.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B3.currentTitle! + lista.lista[index].OracionB
             selec = true
             SB3 = true
+        }else if SB1 {
+            SB1 = false
+            B1.backgroundColor = color
+            SB3 = true
+            B3.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B3.currentTitle! + lista.lista[index].OracionB
+        }else if SB2 {
+            SB2 = false
+            B2.backgroundColor = color
+            SB3 = true
+            B3.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B3.currentTitle! + lista.lista[index].OracionB
+        }else if SB4 {
+            SB4 = false
+            B4.backgroundColor = color
+            SB3 = true
+            B3.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B3.currentTitle! + lista.lista[index].OracionB
         }else{
             if SB3 {
                 SB3 = false
@@ -158,10 +214,28 @@ class APViewController: UIViewController {
     
     @IBAction func BB4(_ sender: Any) {
         if !selec {
-        B4.backgroundColor = .green
+        B4.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B4.currentTitle! + lista.lista[index].OracionB
             selec = true
             SB4 = true
+        }else if SB1 {
+            SB1 = false
+            B1.backgroundColor = color
+            SB4 = true
+            B4.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B4.currentTitle! + lista.lista[index].OracionB
+        }else if SB2 {
+            SB2 = false
+            B2.backgroundColor = color
+            SB4 = true
+            B4.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B4.currentTitle! + lista.lista[index].OracionB
+        }else if SB3 {
+            SB3 = false
+            B3.backgroundColor = color
+            SB4 = true
+            B4.backgroundColor = color2
+            lOracion.text = lista.lista[index].OracionA + B4.currentTitle! + lista.lista[index].OracionB
         }else{
             if SB4 {
                 SB4 = false
@@ -301,6 +375,11 @@ class APViewController: UIViewController {
                     lPuntos.text = String(puntos)
                 }
             }
+        }else{
+            let alert = UIAlertController(title: "¡Error!", message: "Elige una opción.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
         }
     }
     

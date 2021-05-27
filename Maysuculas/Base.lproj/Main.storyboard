@@ -222,7 +222,7 @@
                     <navigationItem key="navigationItem" title="Notas" id="0FR-BH-5dZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rl1-vw-r9E">
                             <connections>
-                                <segue destination="l9r-Dj-g7M" kind="presentation" identifier="agregarNota" id="dfM-wj-cxK"/>
+                                <segue destination="l9r-Dj-g7M" kind="show" identifier="agregarNota" id="dfM-wj-cxK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -266,11 +266,11 @@
             <objects>
                 <viewController id="l9r-Dj-g7M" customClass="AgregarNotaViewController" customModule="Mayusculas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nS3-Ec-z8y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnh-bX-SOZ">
-                                <rect key="frame" x="88.5" y="89" width="198" height="34"/>
+                                <rect key="frame" x="88.5" y="133" width="198" height="34"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Aep-2r-9E2"/>
@@ -280,7 +280,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escribe el titulo de tu nota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAa-lZ-tFE">
-                                <rect key="frame" x="88.5" y="44" width="198" height="21"/>
+                                <rect key="frame" x="88.5" y="88" width="198" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="198" id="EEI-ax-KTh"/>
                                     <constraint firstAttribute="height" constant="21" id="SeU-hC-vM8"/>
@@ -290,7 +290,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uAB-a0-jSL">
-                                <rect key="frame" x="16" y="209" width="343" height="324"/>
+                                <rect key="frame" x="16" y="253" width="343" height="324"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="I99-Ce-xne"/>
@@ -301,11 +301,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q27-yK-XBd">
-                                <rect key="frame" x="141" y="573" width="93" height="30"/>
+                                <rect key="frame" x="132" y="597" width="111" height="30"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="93" id="8Y7-OP-IaU"/>
-                                    <constraint firstAttribute="height" constant="30" id="Wdp-Fk-mYU"/>
+                                    <constraint firstAttribute="width" constant="111" id="kct-pS-wvU"/>
+                                    <constraint firstAttribute="height" constant="30" id="lxU-d7-6ZF"/>
                                 </constraints>
                                 <state key="normal" title="Guardar Nota"/>
                                 <connections>
@@ -313,7 +313,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escribe el contenido de tu  nota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2q-Jv-OOZ">
-                                <rect key="frame" x="67.5" y="158" width="240" height="21"/>
+                                <rect key="frame" x="67.5" y="202" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="fhq-jI-IAl"/>
                                     <constraint firstAttribute="height" constant="21" id="g7o-ad-Jas"/>
@@ -329,13 +329,13 @@
                         <constraints>
                             <constraint firstItem="rnh-bX-SOZ" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="5aB-Q4-vtQ"/>
                             <constraint firstItem="kAa-lZ-tFE" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="B7i-yi-FFf"/>
-                            <constraint firstItem="Q27-yK-XBd" firstAttribute="top" secondItem="uAB-a0-jSL" secondAttribute="bottom" constant="40" id="SJv-n4-pqU"/>
                             <constraint firstItem="uAB-a0-jSL" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="Wh5-jo-3Ni"/>
                             <constraint firstItem="rnh-bX-SOZ" firstAttribute="top" secondItem="kAa-lZ-tFE" secondAttribute="bottom" constant="24" id="dOj-Uc-CRD"/>
                             <constraint firstItem="v2q-Jv-OOZ" firstAttribute="top" secondItem="rnh-bX-SOZ" secondAttribute="bottom" constant="35" id="eja-XA-W8S"/>
-                            <constraint firstItem="Q27-yK-XBd" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="gnO-yG-yzm"/>
                             <constraint firstItem="kAa-lZ-tFE" firstAttribute="top" secondItem="1iI-ml-uaM" secondAttribute="top" constant="44" id="kbG-23-FdD"/>
+                            <constraint firstItem="Q27-yK-XBd" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="m9m-mu-JxO"/>
                             <constraint firstItem="uAB-a0-jSL" firstAttribute="top" secondItem="v2q-Jv-OOZ" secondAttribute="bottom" constant="30" id="nqf-uG-bMP"/>
+                            <constraint firstItem="Q27-yK-XBd" firstAttribute="top" secondItem="uAB-a0-jSL" secondAttribute="bottom" constant="20" id="qnb-fB-m7h"/>
                             <constraint firstItem="v2q-Jv-OOZ" firstAttribute="centerX" secondItem="nS3-Ec-z8y" secondAttribute="centerX" id="uob-Sy-FKo"/>
                         </constraints>
                         <connections>

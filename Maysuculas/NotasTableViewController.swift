@@ -79,6 +79,7 @@ class NotasTableViewController: UITableViewController, UISearchBarDelegate {
         if editingStyle == .delete {
             // Delete the row from the data source
             listaNotas.remove(at: indexPath.row)
+            filteredData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             
