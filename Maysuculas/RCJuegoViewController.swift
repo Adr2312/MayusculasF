@@ -11,8 +11,6 @@ class RCJuegoViewController: UIViewController {
     
     @IBOutlet weak var IB1: UIButton!
     @IBOutlet weak var IB2: UIButton!
-    @IBOutlet weak var IB3: UIButton!
-    @IBOutlet weak var IB4: UIButton!
     @IBOutlet weak var DB1: UIButton!
     @IBOutlet weak var DB2: UIButton!
     @IBOutlet weak var DB3: UIButton!
@@ -48,8 +46,6 @@ class RCJuegoViewController: UIViewController {
         super.viewDidLoad()
         IB1.layer.cornerRadius = 10
         IB2.layer.cornerRadius = 10
-        IB3.layer.cornerRadius = 10
-        IB4.layer.cornerRadius = 10
         DB1.layer.cornerRadius = 10
         DB2.layer.cornerRadius = 10
         DB3.layer.cornerRadius = 10
@@ -84,11 +80,7 @@ class RCJuegoViewController: UIViewController {
         IB2.tag = izq.first!
         IB2.setTitle(lista.lista[index][izq.first!].textoIzquierda, for: .normal)
         izq.remove(at: 0)
-        IB3.tag =  izq.first!
-        IB3.setTitle(lista.lista[index][izq.first!].textoIzquierda, for: .normal)
         izq.remove(at: 0)
-        IB4.tag =  izq.first!
-        IB4.setTitle(lista.lista[index][izq.first!].textoIzquierda, for: .normal)
         izq.remove(at: 0)
         
         DB1.tag = der.first!
@@ -106,14 +98,8 @@ class RCJuegoViewController: UIViewController {
         
         IB1.isEnabled = true
         IB2.isEnabled = true
-        IB3.isEnabled = true
-        IB4.isEnabled = true
-        
         IB1.backgroundColor = .systemYellow
         IB2.backgroundColor = .systemYellow
-        IB3.backgroundColor = .systemYellow
-        IB4.backgroundColor = .systemYellow
-        
         DB1.backgroundColor = .systemYellow
         DB2.backgroundColor = .systemYellow
         DB3.backgroundColor = .systemYellow
@@ -167,7 +153,7 @@ class RCJuegoViewController: UIViewController {
         }
         
     }
-    
+    /*
     @IBAction func ifPressedIB3(_ sender: Any) {
         if semaforo && pIB3{
             UIView.animate(withDuration: 0.1){
@@ -204,7 +190,7 @@ class RCJuegoViewController: UIViewController {
             lI = IB4.currentTitle!
             tI = IB4.tag
         }
-    }
+    }*/
     
     @IBAction func ifPressedDB1(_ sender: Any) {
         if semaforo2 && pDB1{
@@ -306,12 +292,12 @@ class RCJuegoViewController: UIViewController {
                 IB2.backgroundColor = .none
                 pIB2 = false
             }else if pIB3{
-                IB3.isEnabled = false
-                IB3.backgroundColor = .none
+              //  IB3.isEnabled = false
+                //IB3.backgroundColor = .none
                 pIB3 = false
             }else{
-                IB4.isEnabled = false
-                IB4.backgroundColor = .none
+                //IB4.isEnabled = false
+                //IB4.backgroundColor = .none
                 pIB4 = false
             }
             
@@ -345,7 +331,7 @@ class RCJuegoViewController: UIViewController {
                     if puntos > defaults.integer(forKey: "RC"){
                         defaults.setValue(puntos, forKey: "RC")
                     }
-                    let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                     let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                     let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                     alert.addAction(restartaction)
@@ -368,12 +354,12 @@ class RCJuegoViewController: UIViewController {
                     self.IB2.backgroundColor = .systemYellow}
             }else if pIB3{
                 pIB3 = false
-                UIView.animate(withDuration: 0.1){
-                    self.IB3.backgroundColor = .systemYellow}
+                /*UIView.animate(withDuration: 0.1){
+                    self.IB3.backgroundColor = .systemYellow}*/
             }else{
                 pIB4 = false
-                UIView.animate(withDuration: 0.1){
-                    self.IB4.backgroundColor = .systemYellow}
+               /* UIView.animate(withDuration: 0.1){
+                    self.IB4.backgroundColor = .systemYellow}*/
             }
             
             if pDB1 {

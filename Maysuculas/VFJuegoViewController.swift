@@ -16,7 +16,7 @@ class VFJuegoViewController: UIViewController {
     @IBOutlet weak var sPregunta: UILabel!
     
     let banco = VFBanco()
-    
+
     func delay(_ delay: Double, closure: @escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
@@ -50,7 +50,7 @@ class VFJuegoViewController: UIViewController {
                 defaults.setValue(nPuntos, forKey: "VF")
             }
             
-            let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
             let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
             let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                 alert.addAction(restartaction)

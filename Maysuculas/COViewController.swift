@@ -58,7 +58,7 @@ class COViewController: UIViewController {
                     defaults.setValue(puntos, forKey: "CO")
                 }
                 
-                let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                 let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                 let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                 alert.addAction(restartaction)
@@ -69,7 +69,7 @@ class COViewController: UIViewController {
                 update()
             }
         }else{
-            let alert = UIAlertController(title: "Incorrecto!", message: "La oracion tiene errores, vuelve a intentar", preferredStyle: .alert)
+            let alert = UIAlertController(title: "¡Incorrecto!", message: "La oracion tiene errores, vuelve a intentar", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(ok)
             present(alert, animated: true, completion: nil)

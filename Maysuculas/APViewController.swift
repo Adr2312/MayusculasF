@@ -185,7 +185,7 @@ class APViewController: UIViewController {
                     SB1 = false
                     selec = false
                     if cont <= 1{
-                        let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                         let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                         let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                         alert.addAction(restartaction)
@@ -200,6 +200,10 @@ class APViewController: UIViewController {
                         
                     }
                 }else{
+                    let alert = UIAlertController(title: "¡Incorrecto!", message: "La opción es incorrecta, vuelve a intentar.", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alert.addAction(ok)
+                    present(alert, animated: true, completion: nil)
                     puntos = puntos - 5
                     lPuntos.text = String(puntos)
                 }
@@ -212,7 +216,7 @@ class APViewController: UIViewController {
                     SB2 = false
                     selec = false
                     if cont <= 1{
-                        let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                         let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                         let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                         alert.addAction(restartaction)
@@ -239,7 +243,7 @@ class APViewController: UIViewController {
                     SB3 = false
                     selec = false
                     if cont <= 1{
-                        let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                         let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                         let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                         alert.addAction(restartaction)
@@ -266,7 +270,7 @@ class APViewController: UIViewController {
                     SB4 = false
                     selec = false
                     if cont <= 1{
-                        let alert = UIAlertController(title: "Felicidades!", message: "El quiz termino, deseas volver a empezar?", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                         let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                         let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
                         alert.addAction(restartaction)

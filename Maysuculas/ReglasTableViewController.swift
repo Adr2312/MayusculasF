@@ -10,10 +10,28 @@ import UIKit
 class ReglasTableViewController: UITableViewController {
 
     var listaReglas = [
-        Reglas(ejemplo: "¡No es increíble! Salió ileso.", regla: "Cuando se inicia un escrito y después de punto, después de los signos de interrogación o admiración, si con ellos se terminó la frase."),
-        Reglas(ejemplo: "Las aventuras del ingenioso hidalgo don Quijote de la Mancha", regla: "Es aceptable escribir sólo con mayúscula la letra inicial de las obras artísticas."),
-        Reglas(ejemplo: "Jesús dijo: La verdad os hará libres", regla: "Cuando se cita después de dos puntos"),
-        Reglas(ejemplo: "Lic., Dr., Profr., Mtro., I.M.S.S., SEP.", regla: "Va mayúscula en las abreviaturas y siglas.")
+        Reglas(ejemplo: "Se escribe mayúscula después de un punto.", regla: "El hombre se acercó a la puerta y tocó. Nadie contestó. Volvió a intentarlo y al poco tiempo salió una mujer. Él la miró."),
+        Reglas(ejemplo: "Se escribe mayúscula al inicio de un párrafo u oración.", regla: "La biología es la ciencia que estudia a los seres vivos."),
+        Reglas(ejemplo: "Se escribe mayúscula después de un signo de interrogación.", regla: "¿Tomas té o café? Puedo preparar lo que prefieras."),
+        Reglas(ejemplo: "Se escriben mayúsculas después de un signo de admiración o exclamación.", regla: "¡Oh! Es hermosa esta pintura renacentista."),
+        Reglas(ejemplo: "Se escribe mayúscula al iniciar una cita textual, si ésta corresponde al inicio de una oración o párrafo.", regla: "El autor de este libro afirma en su primer capítulo: “En el mundo contemporáneo existe una tendencia a la idealización de los objetos materiales”."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los números romanos.", regla: "Esta enciclopedia consta de XIV."),
+        Reglas(ejemplo: "Se escriben con mayúsculas las siglas.", regla: "La UNAM (Universidad Nacional Autónoma de México)."),
+        Reglas(ejemplo: "Se escriben con mayúscula inicial los nombres de obras artísticas, como películas, libros, esculturas, pinturas, etc. Se escribe en mayúscula la inicial de la primera palabra y los nombres propios, en caso de que el nombre los tenga.", regla: "La Afrodita de Milo o Venus de Milo es una escultura griega que data aproximadamente entre los años 130 a. C. y 100 a. C."),
+        Reglas(ejemplo: "Se escriben con mayúscula todas las palabras que comprenden el nombre del título de publicaciones periódicas.", regla: "El periódico El País."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres dados por antonomasia. La antonomasia es una figura retórica en la que a alguien se le nombra por alguna cualidad que lo caracteriza o viceversa. En los casos en los que un nombre común es utilizado por antonomasia como si fuese propio debe escribirse en mayúsculas.", regla: "El Apóstol (para referirse al apóstol San Pablo)."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los nombres y apellidos de personas.", regla: "Juan Luis Guerra es un cantautor y músico dominicano."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los nombres propios dados a personajes mitológicos y divinidades.", regla: "Febe en la mitología griega es una de las titánides, hijo de Urano y G."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los apodos y sobrenombres.", regla: "A él le apodan El Caimán."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los nombres de instituciones y organizaciones.", regla: "La Administración General del E."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres de marcas comerciales.", regla: "Seat es una compañía automovilística de origen español."),
+        Reglas(ejemplo: "Se escriben con mayúsculas los nombres propios de lugares geográficos.", regla: "Londres es la capital de I"),
+        Reglas(ejemplo: "Se escriben con mayúsculas los hidrónimos (nombres de ríos, lagos, océanos, arroyos, etc.).", regla: "El mar Negro está localizado en Asia Menor y el sureste de Europa."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres propios de espacios públicos y urbanos, como glorietas, parques, plazas, etc.", regla: "El barrio Revolución."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres propios de acontecimientos históricos.", regla: "La guerra de I."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres de edades históricas.", regla: "La Baja Edad M."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres propios de órdenes religiosas.", regla: "La Orden de San Agustín."),
+        Reglas(ejemplo: "Se escriben con mayúscula los nombres de festividades.", regla: "La Noche B")
     ]
     
     
