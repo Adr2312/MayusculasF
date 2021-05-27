@@ -1135,7 +1135,7 @@
                                     <outletCollection property="gestureRecognizers" destination="T6N-BC-h9K" appends="YES" id="ou9-gl-GqX"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFV-fc-lY0">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nombre" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFV-fc-lY0">
                                 <rect key="frame" x="115" y="297" width="145" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eFV-fc-lY0" secondAttribute="height" multiplier="145:34" id="a9Y-U8-zwx"/>
