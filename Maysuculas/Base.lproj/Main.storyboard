@@ -652,6 +652,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="358" id="IoS-FV-mBk"/>
+                                            <constraint firstAttribute="height" constant="250" id="eWx-bl-gIi"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="gGB-PS-0n8">
                                         <rect key="frame" x="0.0" y="314" width="358" height="250"/>
@@ -685,6 +689,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="358" id="3cA-2s-vXG"/>
+                                            <constraint firstAttribute="height" constant="250" id="cZz-Rt-exS"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
