@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0A6B6F266129A1007E0498 /* Fuentes2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A6B6E266129A1007E0498 /* Fuentes2TableViewController.swift */; };
+		3A0A6B72266131BB007E0498 /* FuentesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0A6B71266131BB007E0498 /* FuentesTableViewCell.swift */; };
 		3A284BAF26263CB600687A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BAE26263CB600687A37 /* AppDelegate.swift */; };
 		3A284BB126263CB600687A37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BB026263CB600687A37 /* SceneDelegate.swift */; };
 		3A284BB326263CB600687A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A284BB226263CB600687A37 /* ViewController.swift */; };
@@ -23,7 +25,6 @@
 		3A7C3529262B411C006C0BC1 /* Juegos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3528262B411C006C0BC1 /* Juegos.swift */; };
 		3A7C352C262B487C006C0BC1 /* Fuentes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C352B262B487C006C0BC1 /* Fuentes.swift */; };
 		3A7C352F262B4907006C0BC1 /* FuentesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */; };
-		3A7C3532262B4CAA006C0BC1 /* FuentesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */; };
 		3A7C3535262B9070006C0BC1 /* ReglasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */; };
 		3A7C3538262B908A006C0BC1 /* Reglas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C3537262B908A006C0BC1 /* Reglas.swift */; };
 		3A7C353B262B951A006C0BC1 /* Notas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C353A262B951A006C0BC1 /* Notas.swift */; };
@@ -43,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A0A6B6E266129A1007E0498 /* Fuentes2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fuentes2TableViewController.swift; sourceTree = "<group>"; };
+		3A0A6B71266131BB007E0498 /* FuentesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuentesTableViewCell.swift; sourceTree = "<group>"; };
 		3A284BAB26263CB600687A37 /* Mayusculas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mayusculas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A284BAE26263CB600687A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A284BB026263CB600687A37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		3A7C3528262B411C006C0BC1 /* Juegos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juegos.swift; sourceTree = "<group>"; };
 		3A7C352B262B487C006C0BC1 /* Fuentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fuentes.swift; sourceTree = "<group>"; };
 		3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuentesTableViewController.swift; sourceTree = "<group>"; };
-		3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuentesTableViewCell.swift; sourceTree = "<group>"; };
 		3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReglasTableViewController.swift; sourceTree = "<group>"; };
 		3A7C3537262B908A006C0BC1 /* Reglas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reglas.swift; sourceTree = "<group>"; };
 		3A7C353A262B951A006C0BC1 /* Notas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notas.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		3A284BA226263CB600687A37 = {
 			isa = PBXGroup;
 			children = (
+				3A0A6B71266131BB007E0498 /* FuentesTableViewCell.swift */,
 				3AFF8AD6265C0E770062906A /* webViewController.swift */,
 				3A284BAD26263CB600687A37 /* Maysuculas */,
 				3A284BAC26263CB600687A37 /* Products */,
@@ -118,6 +121,7 @@
 				3A284BB026263CB600687A37 /* SceneDelegate.swift */,
 				3A284BB226263CB600687A37 /* ViewController.swift */,
 				3A284BB426263CB600687A37 /* Main.storyboard */,
+				3A0A6B6E266129A1007E0498 /* Fuentes2TableViewController.swift */,
 				3A52AAB3265BF997004DE0B3 /* APViewController.swift */,
 				3A52AAB6265BF9A8004DE0B3 /* APBanco.swift */,
 				3A52AAB9265BF9B8004DE0B3 /* APOracion.swift */,
@@ -136,7 +140,6 @@
 				3A7C353A262B951A006C0BC1 /* Notas.swift */,
 				3A7C3534262B9070006C0BC1 /* ReglasTableViewController.swift */,
 				3A7C3537262B908A006C0BC1 /* Reglas.swift */,
-				3A7C3531262B4CAA006C0BC1 /* FuentesTableViewCell.swift */,
 				3A7C352B262B487C006C0BC1 /* Fuentes.swift */,
 				3A7C352E262B4907006C0BC1 /* FuentesTableViewController.swift */,
 				3A7C3528262B411C006C0BC1 /* Juegos.swift */,
@@ -223,18 +226,19 @@
 				3A284BB326263CB600687A37 /* ViewController.swift in Sources */,
 				3AAFBD74264B377600D5E4F0 /* COOracion.swift in Sources */,
 				3A7C353E262B952E006C0BC1 /* NotasTableViewController.swift in Sources */,
+				3A0A6B6F266129A1007E0498 /* Fuentes2TableViewController.swift in Sources */,
 				3AFF8AD7265C0E770062906A /* webViewController.swift in Sources */,
 				3ACD0C232642080000108CE6 /* RCBanco.swift in Sources */,
 				3A7C3535262B9070006C0BC1 /* ReglasTableViewController.swift in Sources */,
 				3AD299A7264AC8D700A67F77 /* PuntajesViewController.swift in Sources */,
 				3A7C352F262B4907006C0BC1 /* FuentesTableViewController.swift in Sources */,
-				3A7C3532262B4CAA006C0BC1 /* FuentesTableViewCell.swift in Sources */,
 				3A78D191262BABB800909BAE /* AgregarNotaViewController.swift in Sources */,
 				3A52AAB4265BF997004DE0B3 /* APViewController.swift in Sources */,
 				3A52AAB7265BF9A8004DE0B3 /* APBanco.swift in Sources */,
 				3A284BAF26263CB600687A37 /* AppDelegate.swift in Sources */,
 				BCD88E7C262C152400E2FF46 /* VFJuegoViewController.swift in Sources */,
 				3ACD0C202642076D00108CE6 /* RCPregunta.swift in Sources */,
+				3A0A6B72266131BB007E0498 /* FuentesTableViewCell.swift in Sources */,
 				3A7C3521262B3AC5006C0BC1 /* JuegosTableViewController.swift in Sources */,
 				3A284BB126263CB600687A37 /* SceneDelegate.swift in Sources */,
 				3AAFBD7B264B39ED00D5E4F0 /* COViewController.swift in Sources */,

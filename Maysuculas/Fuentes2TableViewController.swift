@@ -1,22 +1,23 @@
 //
-//  FuentesTableViewController.swift
+//  Fuentes2TableViewController.swift
 //  Mayusculas
 //
-//  Created by Javier Adrian Villa Leon on 17/04/21.
+//  Created by Javier Adrian Villa Leon on 28/05/21.
 //
 
 import UIKit
 
-class FuentesTableViewController: UITableViewController {
-    
-    
-    
+class Fuentes2TableViewController: UITableViewController {
+
     var listaFuentes = [
-        Fuentes(nombre: "RAE", ayuda: "Uso de Mayuscúlas", link: "https://www.rae.es/dpd/mayúsculas"),
+        Fuentes(nombre: "RAE", ayuda: "Uso de Mayuscúlas", link: "https:/www.rae.es/qpd/mayúsculas"),
         Fuentes(nombre: "Celeberrima", ayuda: "Reglas para el uso de mayúsculas", link: "https://gramatica.celeberrima.com/reglas-de-ortografia-para-el-uso-adecuado-de-las-mayusculas"),
         Fuentes(nombre: "Un Profesor", ayuda: "Uso de | Reglas y ejemplos", link: "https://www.unprofesor.com/lengua-espanola/uso-de-mayusculas-reglas-y-ejemplos-1672.html"),
         Fuentes(nombre: "Academia Mexicana de la Lengua", ayuda: "Uso de mayúsculas en titulos", link: "https://www.academia.org.mx/espin/respuestas/item/uso-de-mayusculas-en-los-titulos")
     ]
+    
+    var rae = "https://tinyurl.com/yhpqvtry"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +39,38 @@ class FuentesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return listaFuentes.count
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "fuente",  for: indexPath) as! FuentesTableViewCell
-      // cell.lNombre.text = listaFuentes[indexPath.row].nombre
-        //cell.lAyuda.text = listaFuentes[indexPath.row].ayuda
-        //cell.lLink.text = listaFuentes[indexPath.row].link
+        let cell = tableView.dequeueReusableCell(withIdentifier: "fuentes", for: indexPath) as! FuentesTableViewCell
+        cell.lNombre.text = listaFuentes[indexPath.row].nombre
+        cell.lAyuda.text = listaFuentes[indexPath.row].ayuda
+        cell.lLink.text = listaFuentes[indexPath.row].link
+        cell.lLink.textColor = .blue
+    
+        
+        // Configure the cell...
+
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 178
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        var enlace : URL!
+        if indexPath.row == 0{
+             enlace = URL(string: rae)
+        }else{
+             enlace = URL(string: listaFuentes[indexPath.row].link)
+        }
+        UIApplication.shared.open(enlace!)
     }
     
-
-    
-  
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 195
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -2,14 +2,16 @@
 //  FuentesTableViewCell.swift
 //  Mayusculas
 //
-//  Created by Javier Adrian Villa Leon on 17/04/21.
+//  Created by Javier Adrian Villa Leon on 28/05/21.
 //
 
 import UIKit
 
 class FuentesTableViewCell: UITableViewCell {
 
-
+    @IBOutlet weak var lNombre: UILabel!
+    @IBOutlet weak var lAyuda: UILabel!
+    @IBOutlet weak var lLink: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +22,6 @@ class FuentesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
     }
+
 }
