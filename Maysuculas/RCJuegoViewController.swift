@@ -16,7 +16,9 @@ class RCJuegoViewController: UIViewController {
     @IBOutlet weak var DB3: UIButton!
     @IBOutlet weak var DB4: UIButton!
     @IBOutlet weak var lPuntaje: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
+    var start : Bool = false
     var pIB1 : Bool = false
     var pIB2 : Bool = false
     var pIB3 : Bool = false

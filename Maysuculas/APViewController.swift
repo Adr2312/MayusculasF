@@ -16,7 +16,11 @@ class APViewController: UIViewController {
     @IBOutlet weak var lPuntos: UILabel!
     @IBOutlet weak var lOracion: UILabel!
     @IBOutlet weak var bButon: UIButton!
+    @IBOutlet weak var lCount: UILabel!
     
+    var timer = Timer()
+    var countdown : Int = 60
+    var start : Bool = false
     var lista = APBanco()
     var cont : Int = 0
     var listOp  : [String]!
@@ -49,11 +53,37 @@ class APViewController: UIViewController {
         B2.tag = 2
         B3.tag = 3
         B4.tag = 4
-        
+        startCountDown()
         update()
     }
     
-    
+    func startCountDown(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(coundDownMethod), userInfo: nil, repeats: true)
+    }
+
+    @objc func coundDownMethod(){
+        
+        if countdown <= 10 {
+            lCount.textColor = .red
+        }
+        
+        if countdown == 0{
+            let alert = UIAlertController(title: "¡El tiempo termino!", message: "¿Deseas volver a empezar?", preferredStyle: .alert)
+            let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
+            let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
+                alert.addAction(restartaction)
+                alert.addAction(backtom)
+                present(alert, animated: true, completion: nil)
+            
+            countdown = 60
+            lCount.text = String(countdown)
+            lCount.textColor = .black
+            start = false
+        }else if start{
+        countdown -= 1
+        lCount.text = "\(countdown)"
+        }
+    }
     func randomNumber() -> [Int]{
         var arrSelec : [Int] = []
         let max = lista.lista.count - 1
@@ -112,6 +142,10 @@ class APViewController: UIViewController {
     }
     
     @IBAction func BB1(_ sender: Any) {
+        if !start{
+            start = true
+        }
+        
         if !selec {
         B1.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B1.currentTitle! + lista.lista[index].OracionB
@@ -146,6 +180,9 @@ class APViewController: UIViewController {
     }
     
     @IBAction func BB2(_ sender: Any) {
+        if !start{
+            start = true
+        }
         if !selec {
         B2.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B2.currentTitle! + lista.lista[index].OracionB
@@ -179,6 +216,9 @@ class APViewController: UIViewController {
         }
     }
     @IBAction func BB3(_ sender: Any) {
+        if !start{
+            start = true
+        }
         if !selec {
         B3.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B3.currentTitle! + lista.lista[index].OracionB
@@ -213,6 +253,9 @@ class APViewController: UIViewController {
     }
     
     @IBAction func BB4(_ sender: Any) {
+        if !start{
+            start = true
+        }
         if !selec {
         B4.backgroundColor = color2
         lOracion.text = lista.lista[index].OracionA + B4.currentTitle! + lista.lista[index].OracionB
@@ -404,6 +447,7 @@ class APViewController: UIViewController {
     
     func backtomm(){
         guardar()
+        start = false
         _ = navigationController?.popToRootViewController(animated: true)
     }
     

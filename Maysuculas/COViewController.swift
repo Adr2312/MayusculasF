@@ -14,7 +14,11 @@ class COViewController: UIViewController {
     @IBOutlet weak var lOracion: UILabel!
     @IBOutlet weak var tfOracion: UITextView!
     @IBOutlet weak var bButon: UIButton!
+    @IBOutlet weak var lCount: UILabel!
     
+    var timer = Timer()
+    var countdown : Int = 60
+    var start : Bool = false
     let lista = COBanco()
     var indice = 0
     var puntos = 0
@@ -27,6 +31,8 @@ class COViewController: UIViewController {
         bButon.layer.cornerRadius = 10
         let orden1 = randomNumber()
         orden = orden1
+        lCount.text = String(countdown)
+        startCountDown()
         update()
     }
     
@@ -41,11 +47,15 @@ class COViewController: UIViewController {
                 arrSelec.append(randomInt)
             }
         }
-        print(arrSelec)
+        //print(arrSelec)
         return arrSelec
     }
     
     @IBAction func bVerificar(_ sender: Any) {
+        
+        if !start{
+            start = true
+        }
         
         //print(tfOracion.text)
         //print(lOracion.text)
@@ -53,10 +63,6 @@ class COViewController: UIViewController {
             puntos = puntos + 20
             
             if indice == lista.lista.count - 1 {
-                let defaults = UserDefaults.standard
-                if(puntos > defaults.integer(forKey: "CO")){
-                    defaults.setValue(puntos, forKey: "CO")
-                }
                 
                 let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                 let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
@@ -80,8 +86,38 @@ class COViewController: UIViewController {
         
     }
     
+    func startCountDown(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(coundDownMethod), userInfo: nil, repeats: true)
+    }
+    
+    @objc func coundDownMethod(){
+        if countdown <= 10 {
+            lCount.textColor = .red
+        }
+        if countdown == 0{
+            let alert = UIAlertController(title: "¡El tiempo termino!", message: "¿Deseas volver a empezar?", preferredStyle: .alert)
+            let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
+            let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
+                alert.addAction(restartaction)
+                alert.addAction(backtom)
+                present(alert, animated: true, completion: nil)
+            countdown = 60
+            lCount.text = String(countdown)
+            start = false
+            lCount.textColor = .black
+        }else if start{
+        countdown -= 1
+        lCount.text = "\(countdown)"
+        }
+    }
+    
+    
     
     func restart() {
+        let defaults = UserDefaults.standard
+        if(puntos > defaults.integer(forKey: "CO")){
+            defaults.setValue(puntos, forKey: "CO")
+        }
         puntos = 0
         indice = 0
         orden = randomNumber()
@@ -96,10 +132,15 @@ class COViewController: UIViewController {
         tfOracion.text = ""
     }
     func backtomm(){
+        let defaults = UserDefaults.standard
+        if(puntos > defaults.integer(forKey: "CO")){
+            defaults.setValue(puntos, forKey: "CO")
+        }
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func quitarTeclado(_ sender: Any) {
+        start = false
         self.view.endEditing(true)
     }
     
