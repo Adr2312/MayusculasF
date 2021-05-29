@@ -128,7 +128,12 @@ class RCJuegoViewController: UIViewController {
             shouldStart = true
         }
         
-        if pIB1{
+        if semaforo && !pIB1{
+            pIB1 = true
+            pIB2 = false
+            IB2.backgroundColor = .systemYellow
+            IB1.backgroundColor = .green
+        }else if semaforo && pIB1{
             pIB1 = false
             semaforo = false
             UIView.animate(withDuration: 0.1){
@@ -139,6 +144,9 @@ class RCJuegoViewController: UIViewController {
                 self.IB1.backgroundColor = .green}
             semaforo = true
         }
+        
+       
+        
         
         if semaforo2 && pIB1 {
             validar()
@@ -153,7 +161,12 @@ class RCJuegoViewController: UIViewController {
             shouldStart = true
         }
         
-        if pIB2{
+        if semaforo && !pIB2{
+            pIB1 = false
+            pIB2 = true
+            IB1.backgroundColor = .systemYellow
+            IB2.backgroundColor = .green
+        }else if semaforo && pIB2{
             pIB2 = false
             semaforo = false
             UIView.animate(withDuration: 0.1){
@@ -215,7 +228,25 @@ class RCJuegoViewController: UIViewController {
             shouldStart = true
         }
         
-        if pDB1{
+        if semaforo2 && !pDB1{
+            pDB1 = true
+            pDB2 = false
+            pDB3 = false
+            pDB4 = false
+            if DB2.isEnabled{
+                DB2.backgroundColor = .systemYellow
+            }
+            
+            if DB3.isEnabled{
+                DB3.backgroundColor = .systemYellow
+            }
+            
+            if DB4.isEnabled{
+                DB4.backgroundColor = .systemYellow
+            }
+            
+            DB1.backgroundColor = .green
+        }else if semaforo2 && pDB1{
             pDB1 = false
             semaforo2 = false
             UIView.animate(withDuration: 0.1){
@@ -226,6 +257,19 @@ class RCJuegoViewController: UIViewController {
                 self.DB1.backgroundColor = .green}
             semaforo2 = true
         }
+        
+        /*
+        if pDB1{
+            pDB1 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB1.backgroundColor = .systemYellow}
+        }else{
+            pDB1 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB1.backgroundColor = .green}
+            semaforo2 = true
+        }*/
         
         if semaforo && pDB1 {
             validar()
@@ -260,8 +304,24 @@ class RCJuegoViewController: UIViewController {
             shouldStart = true
         }
         
-        
-        if pDB2{
+        if semaforo2 && !pDB2{
+            pDB2 = true
+            pDB1 = false
+            pDB3 = false
+            pDB4 = false
+            if DB1.isEnabled{
+                DB1.backgroundColor = .systemYellow
+            }
+            
+            if DB3.isEnabled{
+                DB3.backgroundColor = .systemYellow
+            }
+            
+            if DB4.isEnabled{
+                DB4.backgroundColor = .systemYellow
+            }
+            DB2.backgroundColor = .green
+        }else if semaforo2 && pDB2{
             pDB2 = false
             semaforo2 = false
             UIView.animate(withDuration: 0.1){
@@ -273,6 +333,19 @@ class RCJuegoViewController: UIViewController {
             semaforo2 = true
         }
         
+        /*
+        if pDB2{
+            pDB2 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB2.backgroundColor = .systemYellow}
+        }else{
+            pDB2 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB2.backgroundColor = .green}
+            semaforo2 = true
+        }
+        */
         if semaforo && pDB2 {
             validar()
         }
@@ -302,8 +375,27 @@ class RCJuegoViewController: UIViewController {
         if !shouldStart{
             start = true
             shouldStart = true
+            
         }
-        if pDB3{
+        
+        if semaforo2 && !pDB3{
+            pDB3 = true
+            pDB2 = false
+            pDB1 = false
+            pDB4 = false
+            if DB1.isEnabled{
+                DB1.backgroundColor = .systemYellow
+            }
+            
+            if DB2.isEnabled{
+                DB2.backgroundColor = .systemYellow
+            }
+            
+            if DB4.isEnabled{
+                DB4.backgroundColor = .systemYellow
+            }
+            DB3.backgroundColor = .green
+        }else if semaforo2 && pDB3{
             pDB3 = false
             semaforo2 = false
             UIView.animate(withDuration: 0.1){
@@ -314,6 +406,18 @@ class RCJuegoViewController: UIViewController {
                 self.DB3.backgroundColor = .green}
             semaforo2 = true
         }
+        /*
+        if pDB3{
+            pDB3 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB3.backgroundColor = .systemYellow}
+        }else{
+            pDB3 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB3.backgroundColor = .green}
+            semaforo2 = true
+        }*/
         
         if semaforo && pDB3 {
             validar()
@@ -327,7 +431,24 @@ class RCJuegoViewController: UIViewController {
             shouldStart = true
         }
         
-        if pDB4{
+        if semaforo2 && !pDB4{
+            pDB4 = true
+            pDB2 = false
+            pDB3 = false
+            pDB1 = false
+            if DB1.isEnabled{
+                DB1.backgroundColor = .systemYellow
+            }
+            
+            if DB2.isEnabled{
+                DB2.backgroundColor = .systemYellow
+            }
+            
+            if DB3.isEnabled{
+                DB3.backgroundColor = .systemYellow
+            }
+            DB4.backgroundColor = .green
+        }else if semaforo2 && pDB4{
             pDB4 = false
             semaforo2 = false
             UIView.animate(withDuration: 0.1){
@@ -338,6 +459,19 @@ class RCJuegoViewController: UIViewController {
                 self.DB4.backgroundColor = .green}
             semaforo2 = true
         }
+        
+        /*
+        if pDB4{
+            pDB4 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB4.backgroundColor = .systemYellow}
+        }else{
+            pDB4 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB4.backgroundColor = .green}
+            semaforo2 = true
+        }*/
         
         if semaforo && pDB4 {
             validar()
@@ -387,33 +521,19 @@ class RCJuegoViewController: UIViewController {
                 DB1.isEnabled = false
                 DB1.backgroundColor = .none
                 pDB1 = false
-                print("1")
-                print(pDB1)
-                print(DB1.titleLabel?.text)
                 
             }else if pDB2{
                 DB2.isEnabled = false
                 DB2.backgroundColor = .none
                 pDB2 = false
-                print("2")
-                print(pDB2)
-                print(DB2.titleLabel?.text)
             }else if pDB3{
                 DB3.isEnabled = false
                 DB3.backgroundColor = .none
                 pDB3 = false
-                print("3")
-                print(pDB3)
-                print(DB3.titleLabel?.text)
             }else if pDB4{
                 DB4.isEnabled = false
                 DB4.backgroundColor = .none
                 pDB4 = false
-                print("4")
-                print(pDB4)
-                print(DB4.titleLabel?.text)
-            }else{
-                print("5")
             }
             
             cont = cont + 1
@@ -516,6 +636,8 @@ class RCJuegoViewController: UIViewController {
     }
     
     func backtomm(){
+        start = false
+        shouldStart = false
         let defaults = UserDefaults.standard
         if puntos > defaults.integer(forKey: "RC"){
             defaults.setValue(puntos, forKey: "RC")
