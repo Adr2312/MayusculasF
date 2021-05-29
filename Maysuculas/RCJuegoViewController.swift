@@ -16,9 +16,13 @@ class RCJuegoViewController: UIViewController {
     @IBOutlet weak var DB3: UIButton!
     @IBOutlet weak var DB4: UIButton!
     @IBOutlet weak var lPuntaje: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var lCount: UILabel!
     
+    
+    var timer = Timer()
+    var countdown : Int = 60
     var start : Bool = false
+    var shouldStart : Bool = false
     var pIB1 : Bool = false
     var pIB2 : Bool = false
     var pIB3 : Bool = false
@@ -52,6 +56,8 @@ class RCJuegoViewController: UIViewController {
         DB2.layer.cornerRadius = 10
         DB3.layer.cornerRadius = 10
         DB4.layer.cornerRadius = 10
+        lCount.text = String(countdown)
+        startCountDown()
         update()
         // Do any additional setup after loading the view.
     }
@@ -66,16 +72,16 @@ class RCJuegoViewController: UIViewController {
                 arrSelec.append(randomInt)
             }
         }
-        print(arrSelec)
+        //print(arrSelec)
         return arrSelec
     }
     
     func update(){
         var der = randomNumber()
         lPuntaje.text = String(puntos)
-        var izq = randomNumber()
+        //var izq = randomNumber()
         
-        IB1.tag = izq.first!
+        /*IB1.tag = izq.first!
         
         IB1.setTitle(lista.lista[index][izq.first!].textoIzquierda, for: .normal)
         izq.remove(at: 0)
@@ -84,6 +90,7 @@ class RCJuegoViewController: UIViewController {
         izq.remove(at: 0)
         izq.remove(at: 0)
         izq.remove(at: 0)
+        */
         
         DB1.tag = der.first!
         DB1.setTitle(lista.lista[index][der.first!].textoDerecha, for: .normal)
@@ -116,42 +123,50 @@ class RCJuegoViewController: UIViewController {
     
     @IBAction func ifPressedIB1(_ sender: Any) {
         
-        if semaforo && pIB1{
-            UIView.animate(withDuration: 0.1){
-                self.IB1.backgroundColor = .systemYellow}
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        
+        if pIB1{
             pIB1 = false
             semaforo = false
-        } else if semaforo == true{
             UIView.animate(withDuration: 0.1){
                 self.IB1.backgroundColor = .systemYellow}
         }else{
+            pIB1 = true
             UIView.animate(withDuration: 0.1){
                 self.IB1.backgroundColor = .green}
-            pIB1 = true
             semaforo = true
-            lI = IB1.currentTitle!
-            tI = IB1.tag
+        }
+        
+        if semaforo2 && pIB1 {
+            validar()
         }
     }
     
     
     
     @IBAction func ifPressedIB2(_ sender: Any) {
-        if semaforo && pIB2{
-            UIView.animate(withDuration: 0.1){
-                self.IB2.backgroundColor = .systemYellow}
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        
+        if pIB2{
             pIB2 = false
             semaforo = false
-        } else if semaforo == true{
             UIView.animate(withDuration: 0.1){
                 self.IB2.backgroundColor = .systemYellow}
         }else{
+            pIB2 = true
             UIView.animate(withDuration: 0.1){
                 self.IB2.backgroundColor = .green}
             semaforo = true
-            pIB2 = true
-            lI = IB2.currentTitle!
-            tI = IB2.tag
+        }
+        
+        if semaforo2 && pIB2 {
+            validar()
         }
         
     }
@@ -195,6 +210,29 @@ class RCJuegoViewController: UIViewController {
     }*/
     
     @IBAction func ifPressedDB1(_ sender: Any) {
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        
+        if pDB1{
+            pDB1 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB1.backgroundColor = .systemYellow}
+        }else{
+            pDB1 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB1.backgroundColor = .green}
+            semaforo2 = true
+        }
+        
+        if semaforo && pDB1 {
+            validar()
+        }
+        
+        
+        /*
         if semaforo2 && pDB1{
             UIView.animate(withDuration: 0.1){
                 self.DB1.backgroundColor = .systemYellow}
@@ -203,20 +241,43 @@ class RCJuegoViewController: UIViewController {
         } else if semaforo2 == true{
             UIView.animate(withDuration: 0.1){
                 self.DB1.backgroundColor = .systemYellow}
-        }else{
+        }else if !semaforo{
             UIView.animate(withDuration: 0.1){
                 self.DB1.backgroundColor = .green}
             semaforo2 = true
             pDB1 = true
             lD = DB1.currentTitle!
             tD = DB1.tag
+        }else{
             validar()
-        }
+        }*/
         
     }
     
     @IBAction func ifPressedDB2(_ sender: Any) {
-        if semaforo2 && pDB2{
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        
+        
+        if pDB2{
+            pDB2 = false
+            semaforo2 = false
+            UIView.animate(withDuration: 0.1){
+                self.DB2.backgroundColor = .systemYellow}
+        }else{
+            pDB2 = true
+            UIView.animate(withDuration: 0.1){
+                self.DB2.backgroundColor = .green}
+            semaforo2 = true
+        }
+        
+        if semaforo && pDB2 {
+            validar()
+        }
+        
+        /*if semaforo2 && pDB2{
             UIView.animate(withDuration: 0.1){
                 self.DB2.backgroundColor = .systemYellow}
             pDB2 = false
@@ -224,115 +285,148 @@ class RCJuegoViewController: UIViewController {
         } else if semaforo2 == true{
             UIView.animate(withDuration: 0.1){
                 self.DB2.backgroundColor = .systemYellow}
-        }else{
+        }else if !semaforo{
             UIView.animate(withDuration: 0.1){
                 self.DB2.backgroundColor = .green}
             semaforo2 = true
             pDB2 = true
             lD = DB2.currentTitle!
             tD = DB2.tag
+        }else{
             validar()
-        }
+        }*/
         
     }
     
     @IBAction func ifPressedDB3(_ sender: Any) {
-        if semaforo2 && pDB3{
-            UIView.animate(withDuration: 0.1){
-                self.DB3.backgroundColor = .systemYellow}
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        if pDB3{
             pDB3 = false
             semaforo2 = false
-        } else if semaforo2 == true{
             UIView.animate(withDuration: 0.1){
                 self.DB3.backgroundColor = .systemYellow}
         }else{
+            pDB3 = true
             UIView.animate(withDuration: 0.1){
                 self.DB3.backgroundColor = .green}
             semaforo2 = true
-            pDB3 = true
-            lD = DB3.currentTitle!
-            tD = DB3.tag
+        }
+        
+        if semaforo && pDB3 {
             validar()
         }
         
     }
     
     @IBAction func ifPressedDB4(_ sender: Any) {
-        if semaforo2 && pDB4{
-            UIView.animate(withDuration: 0.1){
-                self.DB4.backgroundColor = .systemYellow}
+        if !shouldStart{
+            start = true
+            shouldStart = true
+        }
+        
+        if pDB4{
             pDB4 = false
             semaforo2 = false
-        } else if semaforo2 == true{
             UIView.animate(withDuration: 0.1){
                 self.DB4.backgroundColor = .systemYellow}
         }else{
+            pDB4 = true
             UIView.animate(withDuration: 0.1){
                 self.DB4.backgroundColor = .green}
             semaforo2 = true
-            pDB4 = true
-            lD = DB4.currentTitle!
-            tD = DB4.tag
+        }
+        
+        if semaforo && pDB4 {
             validar()
         }
     }
     
     func validar(){
-        print(tI)
-        print(tD)
         
-        if tD == tI{
+        var derecha : String!
+        var izquierda : String!
+        
+        if pIB1{
+            izquierda = IB1.currentTitle
+        }else{
+            izquierda = IB2.currentTitle
+        }
+        
+        if pDB1{
+            derecha = lista.lista[index][DB1.tag].textoIzquierda
+        }else if pDB2{
+            derecha = lista.lista[index][DB2.tag].textoIzquierda
+        }else if pDB3{
+            derecha = lista.lista[index][DB3.tag].textoIzquierda
+        }else{
+            derecha = lista.lista[index][DB4.tag].textoIzquierda
+        }
+        
+        print(izquierda!)
+        print(derecha!)
+        
+        if izquierda == derecha{
             esCorrect = true
-            puntos = puntos + 5
+            puntos = puntos + 20
             lPuntaje.text = String(puntos)
+            
             if pIB1{
-                IB1.isEnabled = false
-                IB1.backgroundColor = .none
+                UIView.animate(withDuration: 0.1){
+                    self.IB1.backgroundColor = .systemYellow}
                 pIB1 = false
-            }else if pIB2{
-                IB2.isEnabled = false
-                IB2.backgroundColor = .none
-                pIB2 = false
-            }else if pIB3{
-              //  IB3.isEnabled = false
-                //IB3.backgroundColor = .none
-                pIB3 = false
             }else{
-                //IB4.isEnabled = false
-                //IB4.backgroundColor = .none
-                pIB4 = false
+                UIView.animate(withDuration: 0.1){
+                    self.IB2.backgroundColor = .systemYellow}
+                pIB2 = false
             }
             
-            if pDB1 {
+            if pDB1{
                 DB1.isEnabled = false
                 DB1.backgroundColor = .none
                 pDB1 = false
+                print("1")
+                print(pDB1)
+                print(DB1.titleLabel?.text)
+                
             }else if pDB2{
                 DB2.isEnabled = false
-                pDB2 = false
                 DB2.backgroundColor = .none
+                pDB2 = false
+                print("2")
+                print(pDB2)
+                print(DB2.titleLabel?.text)
             }else if pDB3{
                 DB3.isEnabled = false
-                pDB3 = false
                 DB3.backgroundColor = .none
+                pDB3 = false
+                print("3")
+                print(pDB3)
+                print(DB3.titleLabel?.text)
             }else if pDB4{
                 DB4.isEnabled = false
-                pDB4 = false
                 DB4.backgroundColor = .none
+                pDB4 = false
+                print("4")
+                print(pDB4)
+                print(DB4.titleLabel?.text)
+            }else{
+                print("5")
             }
+            
             cont = cont + 1
             
             if cont == 4{
-                
                 index = index + 1
                 if index < lista.lista.count{
                     cont = 0
                     update()
                 }else{
-                    let defaults = UserDefaults.standard
-                    if puntos > defaults.integer(forKey: "RC"){
-                        defaults.setValue(puntos, forKey: "RC")
-                    }
+                    start = false
+                    shouldStart = false
+                    countdown = 60
                     let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                     let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                     let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
@@ -341,7 +435,7 @@ class RCJuegoViewController: UIViewController {
                     present(alert, animated: true, completion: nil)
                 }
             }
-            
+
         }else{
             esCorrect = false
             puntos = puntos - 5
@@ -354,14 +448,6 @@ class RCJuegoViewController: UIViewController {
                 pIB2 = false
                 UIView.animate(withDuration: 0.1){
                     self.IB2.backgroundColor = .systemYellow}
-            }else if pIB3{
-                pIB3 = false
-                /*UIView.animate(withDuration: 0.1){
-                    self.IB3.backgroundColor = .systemYellow}*/
-            }else{
-                pIB4 = false
-               /* UIView.animate(withDuration: 0.1){
-                    self.IB4.backgroundColor = .systemYellow}*/
             }
             
             if pDB1 {
@@ -381,16 +467,47 @@ class RCJuegoViewController: UIViewController {
                 UIView.animate(withDuration: 0.1){
                     self.DB4.backgroundColor = .systemYellow}
             }
-            
-            
         }
-        
         
         semaforo = false
         semaforo2 = false
     }
     
+    func startCountDown(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(coundDownMethod), userInfo: nil, repeats: true)
+    }
+    
+    @objc func coundDownMethod(){
+        if countdown <= 10 {
+            lCount.textColor = .red
+        }
+        if countdown == 0{
+            let alert = UIAlertController(title: "¡El tiempo termino!", message: "¿Deseas volver a empezar?", preferredStyle: .alert)
+            let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
+            let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
+                alert.addAction(restartaction)
+                alert.addAction(backtom)
+                present(alert, animated: true, completion: nil)
+            countdown = 60
+            lCount.text = String(countdown)
+            start = false
+            lCount.textColor = .black
+        }else if start{
+        countdown -= 1
+        lCount.text = "\(countdown)"
+        }
+    }
+    
+    
     func restart() {
+        let defaults = UserDefaults.standard
+        if puntos > defaults.integer(forKey: "RC"){
+            defaults.setValue(puntos, forKey: "RC")
+        }
+        start = false
+        shouldStart = false
+        countdown = 60
+        lCount.text = String(countdown)
         puntos = 0
         index = 0
         cont = 0
@@ -399,6 +516,10 @@ class RCJuegoViewController: UIViewController {
     }
     
     func backtomm(){
+        let defaults = UserDefaults.standard
+        if puntos > defaults.integer(forKey: "RC"){
+            defaults.setValue(puntos, forKey: "RC")
+        }
         _ = navigationController?.popToRootViewController(animated: true)
     }
     
