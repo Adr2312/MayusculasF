@@ -53,6 +53,7 @@ class APViewController: UIViewController {
         B2.tag = 2
         B3.tag = 3
         B4.tag = 4
+        lCount.text = String(countdown)
         startCountDown()
         update()
     }

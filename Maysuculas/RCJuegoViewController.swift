@@ -93,16 +93,16 @@ class RCJuegoViewController: UIViewController {
         */
         
         DB1.tag = der.first!
-        DB1.setTitle(lista.lista[index][der.first!].textoDerecha, for: .normal)
+        DB1.setTitle(lista.lista[index][der.first!].textoDerecha.lowercased(), for: .normal)
         der.remove(at: 0)
         DB2.tag = der.first!
-        DB2.setTitle(lista.lista[index][der.first!].textoDerecha, for: .normal)
+        DB2.setTitle(lista.lista[index][der.first!].textoDerecha.lowercased(), for: .normal)
         der.remove(at: 0)
         DB3.tag = der.first!
-        DB3.setTitle(lista.lista[index][der.first!].textoDerecha, for: .normal)
+        DB3.setTitle(lista.lista[index][der.first!].textoDerecha.lowercased(), for: .normal)
         der.remove(at: 0)
         DB4.tag = der.first!
-        DB4.setTitle(lista.lista[index][der.first!].textoDerecha, for: .normal)
+        DB4.setTitle(lista.lista[index][der.first!].textoDerecha.lowercased(), for: .normal)
         der.remove(at: 0)
         
         IB1.isEnabled = true

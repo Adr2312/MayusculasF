@@ -7,21 +7,31 @@
 
 import UIKit
 
-class NotasTableViewController: UITableViewController, UISearchBarDelegate {
+class NotasTableViewController: UITableViewController, UISearchBarDelegate, protocoloEditar {
+    var listaNotas = [Notas]()
     var nNota = Notas(nombre: "", nota: "")
     var filteredData : [Notas]!
-    var listaNotas = [
+    /*var listaNotas = [
         Notas(nombre: "Titulos", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
         Notas(nombre: "Meses", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
         Notas(nombre: "Citas", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated"),
         Notas(nombre: "Nombres", nota: "Greetings. I am writing because I discovered a way to improve the taste of decaffeinated")
-    ]
+    ]*/
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let app = UIApplication.shared
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(guardarNotas), name: UIApplication.didEnterBackgroundNotification, object: app)
+        
+        if FileManager.default.fileExists(atPath: dataFileURL().path){
+            obtenerNotas()
+        }
         filteredData = listaNotas
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -60,8 +70,10 @@ class NotasTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "agregarNota"{
             let vistaNota = segue.destination as! VerNotaViewController
-            let indice = tableView.indexPathForSelectedRow
-            vistaNota.unaNota = listaNotas[indice!.row]
+            let indice = tableView.indexPathForSelectedRow!
+            vistaNota.unaNota = listaNotas[indice.row]
+            vistaNota.indice = indice.row
+            vistaNota.delegado = self
         }
         
     }
@@ -103,6 +115,48 @@ class NotasTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
 
+    func dataFileURL() -> URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = documentsDirectory.appendingPathComponent("Notas").appendingPathExtension("plist")
+        print(pathArchivo.path)
+        return pathArchivo
+    }
+    
+    
+    @IBAction func guardarNotas(){
+        do{
+            let data = try PropertyListEncoder().encode(listaNotas)
+            try data.write(to: dataFileURL())
+        }catch{
+            print("Error al guardar las notas")
+        }
+    }
+    
+    func obtenerNotas(){
+        listaNotas.removeAll()
+        
+        do{
+            let data = try Data.init(contentsOf: dataFileURL())
+            listaNotas = try PropertyListDecoder().decode([Notas].self, from: data)
+            filteredData = listaNotas
+        }
+        catch{
+            print("Error al cargar los datos del archivo")
+        }
+            
+            tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guardarNotas()
+    }
+    
+    func actualizarNota(nota: Notas,indice:Int){
+        listaNotas[indice].nota = nota.nota
+        filteredData = listaNotas
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

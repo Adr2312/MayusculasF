@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol protocoloEditar {
+    func actualizarNota(nota: Notas, indice : Int)
+}
+
 class VerNotaViewController: UIViewController {
+    var delegado : protocoloEditar!
     var unaNota : Notas!
+    var indice : Int = 0
     
+    @IBOutlet weak var lText: UITextView!
     @IBOutlet weak var nNota: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +26,11 @@ class VerNotaViewController: UIViewController {
         nNota.text = unaNota.nota
     }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+            unaNota.nota = lText.text
+            delegado.actualizarNota(nota: unaNota, indice: indice)
+    }
     
     // MARK: - Navigation
 /*
