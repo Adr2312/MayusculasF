@@ -20,7 +20,7 @@ class RCJuegoViewController: UIViewController {
     
     
     var timer = Timer()
-    var countdown : Int = 60
+    var countdown : Int = 30
     var start : Bool = false
     var shouldStart : Bool = false
     var pIB1 : Bool = false
@@ -546,7 +546,7 @@ class RCJuegoViewController: UIViewController {
                 }else{
                     start = false
                     shouldStart = false
-                    countdown = 60
+                    countdown = 30
                     let alert = UIAlertController(title: "¡Felicidades!", message: "El quiz termino, ¿deseas volver a empezar?", preferredStyle: .alert)
                     let restartaction = UIAlertAction(title: "Reiniciar", style: .default, handler: {action in self.restart()})
                     let backtom = UIAlertAction(title: "Salir", style: .default, handler: {action in self.backtomm()})
@@ -608,7 +608,7 @@ class RCJuegoViewController: UIViewController {
                 alert.addAction(restartaction)
                 alert.addAction(backtom)
                 present(alert, animated: true, completion: nil)
-            countdown = 60
+            countdown = 30
             lCount.text = String(countdown)
             start = false
             lCount.textColor = .black
@@ -626,7 +626,7 @@ class RCJuegoViewController: UIViewController {
         }
         start = false
         shouldStart = false
-        countdown = 60
+        countdown = 30
         lCount.text = String(countdown)
         puntos = 0
         index = 0

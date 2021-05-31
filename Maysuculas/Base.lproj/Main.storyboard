@@ -922,10 +922,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjd-l7-rFN">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="36"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="sqk-No-gjm"/>
                                                     <constraint firstAttribute="height" constant="36" id="x6g-e3-aTl"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -935,7 +934,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-eh-upw">
-                                                <rect key="frame" x="176" y="0.0" width="155" height="36"/>
+                                                <rect key="frame" x="181" y="0.0" width="150" height="36"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="fma-7G-7Ga"/>

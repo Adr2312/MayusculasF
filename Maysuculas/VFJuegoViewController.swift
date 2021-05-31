@@ -16,7 +16,7 @@ class VFJuegoViewController: UIViewController {
     @IBOutlet weak var lCount: UILabel!
     
     var start : Bool = false
-    var countdown : Int = 60
+    var countdown : Int = 30
     var timer = Timer()
     let banco = VFBanco()
 
@@ -48,7 +48,7 @@ class VFJuegoViewController: UIViewController {
                 alert.addAction(restartaction)
                 alert.addAction(backtom)
                 present(alert, animated: true, completion: nil)
-            countdown = 60
+            countdown = 30
             lCount.text = String(countdown)
             start = false
             lCount.textColor = .black
@@ -96,7 +96,8 @@ class VFJuegoViewController: UIViewController {
             defaults.setValue(nPuntos, forKey: "VF")
         }
         start = false
-        countdown = 60
+        countdown = 30
+        lCount.text = String(countdown)
         nPuntos = 0
         nPregunta = 0
         updatePregunta()
@@ -110,7 +111,7 @@ class VFJuegoViewController: UIViewController {
         if banco.list[nPregunta].CAnswer == 0 {
             UIView.animate(withDuration: 1){
                 self.bVerdadero.backgroundColor = .green}
-            nPuntos += 1
+            nPuntos += 10
             nPregunta += 1
             bVerdadero.isEnabled = false
             bFalso.isEnabled = false
@@ -145,7 +146,7 @@ class VFJuegoViewController: UIViewController {
         if banco.list[nPregunta].CAnswer == 1 {
             UIView.animate(withDuration: 1){
             self.bFalso.backgroundColor = .green}
-            nPuntos += 1
+            nPuntos += 10
             nPregunta += 1
             bFalso.isEnabled = false
             bVerdadero.isEnabled = false

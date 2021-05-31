@@ -20,6 +20,8 @@ class PuntajesViewController: UIViewController,UIImagePickerControllerDelegate, 
     @IBOutlet weak var v3: UIView!
     @IBOutlet weak var v4: UIView!
     @IBOutlet weak var pm: UIImageView!
+    var foto : UIImage!
+    var sFoto : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +79,49 @@ class PuntajesViewController: UIViewController,UIImagePickerControllerDelegate, 
         let foto = pm.image?.pngData()
         defaults.setValue(foto, forKey: "PP")
     }
+    
+    @IBAction func guardarFoto(){
+        let image = pm.image
+        
+        if let data = image?.pngData(){
+            let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let url = documents.appendingPathComponent("Foto")
+               do {
+                   // Write to Disk
+                   try data.write(to: url)
+                   // Store URL in User Defaults
+                   UserDefaults.standard.set(url, forKey: "PP")
+               } catch {
+                   print("Unable to Write Data to Disk (\(error))")
+               }
+        }
+    }
+    
+    
+    func dataFileURL() -> URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = documentsDirectory.appendingPathComponent("Foto")
+        print(pathArchivo.path)
+        return pathArchivo
+    }
+    
+    
+
+    
+    func obtenerNotas(){
+        do{
+            let data = try Data.init(contentsOf: dataFileURL())
+            sFoto = try PropertyListDecoder().decode(String.self, from: data)
+            pm.image = foto
+        }
+        catch{
+            print("Error al cargar los datos del archivo")
+        }
+            
+            
+    }
+    
+    
     /*
     // MARK: - Navigation
 

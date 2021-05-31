@@ -19,7 +19,7 @@ class APViewController: UIViewController {
     @IBOutlet weak var lCount: UILabel!
     
     var timer = Timer()
-    var countdown : Int = 60
+    var countdown : Int = 30
     var start : Bool = false
     var lista = APBanco()
     var cont : Int = 0
@@ -76,7 +76,7 @@ class APViewController: UIViewController {
                 alert.addAction(backtom)
                 present(alert, animated: true, completion: nil)
             
-            countdown = 60
+            countdown = 30
             lCount.text = String(countdown)
             lCount.textColor = .black
             start = false
